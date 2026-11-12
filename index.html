@@ -1,7 +1,161 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="卫戍协议规程盟约干员分类图鉴：26个盟约、141名干员，支持名称搜索、等阶筛选及特质查看。"><title>卫戍协议 · 盟约干员图鉴</title><link rel="stylesheet" href="style.css?v=2"></head>
-<body><div class="sitebar"><a href="#" class="siteword">卫戍资料室 <span>COVENANT ATLAS</span></a></div>
-<main><div class="masthead"><div class="mast-copy"><span>ARKNIGHTS / FIELD DATABASE</span><strong>卫戍协议：规程</strong><p>STRONGHOLD PROTOCOL <b>03</b></p></div><div class="mast-art" aria-hidden="true"><img src="assets/char_263_skadi.webp" alt=""><img src="assets/char_180_amgoat.webp" alt=""><img src="assets/char_2025_shu.webp" alt=""></div><div class="mast-mark">COVENANT<br>ARCHIVE / 141</div></div><header class="topbar"><span>资料库 <span class="slash">/</span> 卫戍协议 <span class="slash">/</span> <b>盟约干员图鉴</b></span><button id="theme" class="icon-button" aria-label="切换深浅色主题">☼</button></header><div class="content"><div class="eyebrow">卫戍协议 / 干员资料</div><div class="heading"><div><h1>盟约干员图鉴<span> / 03</span></h1><p>按盟约查阅干员与特质，快速寻找阵容搭配。</p></div><a class="source" href="https://closure.wiki/zh-cn/stronghold-protocol/3" target="_blank" rel="noopener">可露希尔 Wiki 资料来源 ↗</a></div><div class="stats"><div><span>全部干员</span><b>141<small>OPERATORS</small></b></div><div><span>核心盟约</span><b>10<small>CORE COVENANTS</small></b></div><div><span>附加盟约</span><b>16<small>ADDITIONAL COVENANTS</small></b></div><div class="note"><span>收录范围</span><p>卫戍协议：规程<br><small>I — VI 阶干员 · 同一干员可归属多个盟约</small></p></div></div>
-<section class="controls" aria-label="筛选干员"><h2 class="panel-title">干员检索 <small>OPERATOR FILTER</small></h2><div class="grouping-row"><span class="filter-label">浏览方式</span><div class="grouping-modes" role="group" aria-label="干员分组方式"><button data-group="bond" class="selected" aria-pressed="true">按盟约分类</button><button data-group="tier" aria-pressed="false">按等阶分类</button></div><span class="grouping-help">按等阶查看时，每名干员仅展示一次</span></div><div class="control-row"><div class="tabs" role="group" aria-label="盟约类型"><button class="selected" data-type="all">全部盟约 <span>26</span></button><button data-type="核心盟约">核心盟约 <span>10</span></button><button data-type="附加盟约">附加盟约 <span>16</span></button></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索干员、盟约…" aria-label="搜索干员或盟约"><kbd>/</kbd></label></div><div class="bond-picker"><div class="bond-picker-head"><span class="filter-label">具体盟约</span><button id="clearBond" class="bond-choice selected" aria-pressed="true">不限盟约</button><span class="bond-picker-hint">可与等阶、特质类型组合筛选</span></div><div class="bond-picker-row" data-bond-kind="核心盟约"><span class="filter-label">核心盟约</span><div id="coreNav" class="bond-choices" role="group" aria-label="核心盟约筛选"></div></div><div class="bond-picker-row" data-bond-kind="附加盟约"><span class="filter-label">附加盟约</span><div id="extraNav" class="bond-choices" role="group" aria-label="附加盟约筛选"></div></div></div><div class="filter-row"><span class="filter-label">干员等阶</span><div class="tiers" role="group" aria-label="干员等阶"><button class="selected" data-tier="0">全部</button><button data-tier="1">I 阶</button><button data-tier="2">II 阶</button><button data-tier="3">III 阶</button><button data-tier="4">IV 阶</button><button data-tier="5">V 阶</button><button data-tier="6">VI 阶</button></div><button id="reset">重置筛选 ↺</button></div><div class="trait-filter-row"><span class="filter-label">特质类型</span><div class="trait-filters" role="group" aria-label="特质类型筛选"><button data-kind="all" class="selected" aria-pressed="true">全部</button><button data-kind="stack" aria-pressed="false">叠层干员</button><button data-kind="combat" aria-pressed="false">作战能力</button><button data-kind="prep" aria-pressed="false">整备能力</button><button data-kind="special" aria-pressed="false">特异化</button></div><span class="stack-help">叠层包含持续叠加与单次叠加</span></div><div class="display-row"><span class="filter-label">特质显示</span><div class="display-modes" role="group" aria-label="特质显示方式"><button data-display="compact" class="selected" aria-pressed="true">点击查看</button><button data-display="inline" aria-pressed="false">直接显示</button></div><label class="trait-version-label">显示内容 <select id="traitVersion" aria-label="显示的特质版本" disabled><option value="normal">普通特质</option><option value="elite">精锐特质</option><option value="both" selected>普通 + 精锐</option></select></label><label class="color-toggle"><input id="colorTraits" type="checkbox" checked>按特质类型着色</label></div><div id="traitLegend" class="trait-legend"><span class="legend-item kind-stack">● 叠层干员（持续 / 单次）</span><span class="legend-item kind-combat">● 作战能力</span><span class="legend-item kind-prep">● 整备能力</span><span class="legend-item kind-special">● 特异化</span></div></section>
-<div class="results-head"><span id="resultCount" aria-live="polite"></span><span><span id="displayHint">点击干员查看普通 / 精锐特质</span></span></div><div id="groups"></div><footer><strong>卫戍资料室 · Covenant Atlas</strong><br>资料整理自 <a href="https://closure.wiki/zh-cn/stronghold-protocol/3" target="_blank" rel="noopener">可露希尔 Wiki</a> · 抓取日期 2026.11.12 · 游戏内容与图像版权归原权利方所有。<br>本页为静态资料整理，后续游戏调整请以游戏及来源页面为准。</footer></div></main>
-<dialog id="detail"><button id="closeDialog" aria-label="关闭详情">×</button><div id="detailBody"></div></dialog><dialog id="bondEffect" aria-labelledby="bondEffectHeading"><h2 id="bondEffectHeading" class="sr-only">盟约效果</h2><button id="closeBondEffect" aria-label="关闭盟约效果">×</button><div id="bondEffectBody"></div></dialog><script src="app.js"></script></body></html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b100e">
+<meta name="description" content="明日方舟卫戍协议盟约干员分类图鉴：26 个盟约、141 名干员，支持名称搜索、等阶筛选及特质查看。">
+<title>卫戍协议 · 盟约干员图鉴</title>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="./" aria-label="盟约干员图鉴">
+    <span class="brand-mark" aria-hidden="true"><i></i></span>
+    <span class="brand-text"><b>盟约干员图鉴</b><small>COVENANT ATLAS</small></span>
+  </a>
+  <button id="openFilter" class="filter-btn" type="button" aria-haspopup="dialog">
+    筛选<i id="filterCount" hidden></i>
+  </button>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <span class="hero-kicker">ARKNIGHTS / STRONGHOLD PROTOCOL</span>
+    <h1>卫戍协议：规程</h1>
+    <p>收录 <b>141</b> 名干员 · <b>26</b> 个盟约</p>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <img src="assets/char_263_skadi.webp" alt="">
+    <img src="assets/char_180_amgoat.webp" alt="">
+    <img src="assets/char_2025_shu.webp" alt="">
+  </div>
+</section>
+
+<div class="toolbar">
+  <label class="search">
+    <span class="search-icon" aria-hidden="true">⌕</span>
+    <input id="search" type="search" placeholder="搜索干员、盟约…" aria-label="搜索干员或盟约" autocomplete="off">
+    <kbd aria-hidden="true">/</kbd>
+  </label>
+  <div class="seg seg-type" role="group" aria-label="盟约类型">
+    <button type="button" data-type="all" class="selected" aria-pressed="true">全部 <span>26</span></button>
+    <button type="button" data-type="核心盟约" aria-pressed="false">核心 <span>10</span></button>
+    <button type="button" data-type="附加盟约" aria-pressed="false">附加 <span>16</span></button>
+  </div>
+</div>
+
+<div id="activeFilters" class="active-filters" hidden></div>
+
+<div class="results-head">
+  <span id="resultCount" aria-live="polite">正在载入资料…</span>
+</div>
+
+<main id="groups" class="groups"></main>
+
+<footer class="site-foot">
+  <strong>卫戍资料室 · Covenant Atlas</strong>
+  <p>资料整理自 <a href="https://closure.wiki/zh-cn/stronghold-protocol/3" target="_blank" rel="noopener">可露希尔 Wiki</a> · 抓取日期 2026.11.12</p>
+  <p>游戏内容与图像版权归原权利方所有；本页为静态资料整理，后续调整请以游戏内为准。</p>
+</footer>
+
+<dialog id="filterSheet" class="sheet" aria-labelledby="filterTitle">
+  <span class="sheet-grip" aria-hidden="true"></span>
+  <header class="sheet-head">
+    <b id="filterTitle">筛选</b>
+    <button class="sheet-close" type="button" data-close aria-label="关闭筛选">×</button>
+  </header>
+  <div class="sheet-body">
+    <section class="f-sec">
+      <h3>浏览方式</h3>
+      <div class="seg" role="group" aria-label="浏览方式">
+        <button type="button" data-group="bond" class="selected" aria-pressed="true">按盟约</button>
+        <button type="button" data-group="tier" aria-pressed="false">按等阶</button>
+      </div>
+    </section>
+    <section class="f-sec">
+      <h3>盟约类型</h3>
+      <div class="seg" role="group" aria-label="盟约类型">
+        <button type="button" data-type="all" class="selected" aria-pressed="true">全部</button>
+        <button type="button" data-type="核心盟约" aria-pressed="false">核心盟约</button>
+        <button type="button" data-type="附加盟约" aria-pressed="false">附加盟约</button>
+      </div>
+    </section>
+    <section class="f-sec">
+      <h3>具体盟约</h3>
+      <div id="bondGrid" class="bond-grid" role="group" aria-label="具体盟约"></div>
+    </section>
+    <section class="f-sec">
+      <h3>干员等阶</h3>
+      <div class="btn-grid" role="group" aria-label="干员等阶">
+        <button type="button" data-tier="0" class="selected" aria-pressed="true">全部</button>
+        <button type="button" data-tier="1" aria-pressed="false">I 阶</button>
+        <button type="button" data-tier="2" aria-pressed="false">II 阶</button>
+        <button type="button" data-tier="3" aria-pressed="false">III 阶</button>
+        <button type="button" data-tier="4" aria-pressed="false">IV 阶</button>
+        <button type="button" data-tier="5" aria-pressed="false">V 阶</button>
+        <button type="button" data-tier="6" aria-pressed="false">VI 阶</button>
+      </div>
+    </section>
+    <section class="f-sec">
+      <h3>特质类型</h3>
+      <div class="btn-grid" role="group" aria-label="特质类型">
+        <button type="button" data-kind="all" class="selected" aria-pressed="true">全部</button>
+        <button type="button" data-kind="stack" aria-pressed="false">叠层干员</button>
+        <button type="button" data-kind="combat" aria-pressed="false">作战能力</button>
+        <button type="button" data-kind="prep" aria-pressed="false">整备能力</button>
+        <button type="button" data-kind="special" aria-pressed="false">特异化</button>
+      </div>
+      <p class="hint">叠层包含持续叠加与单次叠加</p>
+    </section>
+    <section class="f-sec">
+      <h3>特质显示</h3>
+      <div class="seg" role="group" aria-label="特质显示方式">
+        <button type="button" data-display="compact" class="selected" aria-pressed="true">点击查看</button>
+        <button type="button" data-display="inline" aria-pressed="false">直接显示</button>
+      </div>
+      <div class="f-row">
+        <label for="traitVersion">显示内容</label>
+        <select id="traitVersion" disabled>
+          <option value="normal">普通特质</option>
+          <option value="elite">精锐特质</option>
+          <option value="both" selected>普通 + 精锐</option>
+        </select>
+      </div>
+      <label class="switch"><input id="colorTraits" type="checkbox" checked>按特质类型着色</label>
+      <div id="traitLegend" class="legend">
+        <span class="legend-item kind-stack">叠层干员</span>
+        <span class="legend-item kind-combat">作战能力</span>
+        <span class="legend-item kind-prep">整备能力</span>
+        <span class="legend-item kind-special">特异化</span>
+      </div>
+    </section>
+  </div>
+  <footer class="sheet-foot">
+    <button id="reset" class="btn" type="button">重置</button>
+    <button class="btn primary" type="button" data-close>查看结果</button>
+  </footer>
+</dialog>
+
+<dialog id="detailSheet" class="sheet" aria-labelledby="detailTitle">
+  <span class="sheet-grip" aria-hidden="true"></span>
+  <header class="sheet-head">
+    <b id="detailTitle">干员详情</b>
+    <button class="sheet-close" type="button" data-close aria-label="关闭干员详情">×</button>
+  </header>
+  <div class="sheet-body" id="detailBody"></div>
+</dialog>
+
+<dialog id="effectSheet" class="sheet" aria-labelledby="effectTitle">
+  <span class="sheet-grip" aria-hidden="true"></span>
+  <header class="sheet-head">
+    <b id="effectTitle">盟约效果</b>
+    <button class="sheet-close" type="button" data-close aria-label="关闭效果说明">×</button>
+  </header>
+  <div class="sheet-body" id="effectBody"></div>
+</dialog>
+
+<script src="app.js?v=3"></script>
+</body>
+</html>
