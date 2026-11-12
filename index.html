@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0b100e">
 <meta name="description" content="明日方舟卫戍协议盟约干员分类图鉴：26 个盟约、141 名干员，支持名称搜索、等阶筛选及特质查看。">
 <title>卫戍协议 · 盟约干员图鉴</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -45,6 +45,49 @@
     <button type="button" data-type="附加盟约" aria-pressed="false">附加 <span>16</span></button>
   </div>
 </div>
+
+<section class="pc-filters" aria-label="筛选">
+  <div class="pf-card">
+    <div class="pf-line">
+      <span class="pf-label">具体盟约</span>
+      <div id="pcBondGrid" class="pf-bonds" role="group" aria-label="具体盟约"></div>
+    </div>
+    <div class="pf-line">
+      <span class="pf-label">干员等阶</span>
+      <div class="pf-group" role="group" aria-label="干员等阶">
+        <button type="button" data-tier="0" class="selected" aria-pressed="true">全部</button>
+        <button type="button" data-tier="1" aria-pressed="false">I</button>
+        <button type="button" data-tier="2" aria-pressed="false">II</button>
+        <button type="button" data-tier="3" aria-pressed="false">III</button>
+        <button type="button" data-tier="4" aria-pressed="false">IV</button>
+        <button type="button" data-tier="5" aria-pressed="false">V</button>
+        <button type="button" data-tier="6" aria-pressed="false">VI</button>
+      </div>
+      <span class="pf-label">特质类型</span>
+      <div class="pf-group" role="group" aria-label="特质类型">
+        <button type="button" data-kind="all" class="selected" aria-pressed="true">全部</button>
+        <button type="button" data-kind="stack" aria-pressed="false">叠层</button>
+        <button type="button" data-kind="combat" aria-pressed="false">作战</button>
+        <button type="button" data-kind="prep" aria-pressed="false">整备</button>
+        <button type="button" data-kind="special" aria-pressed="false">特异化</button>
+      </div>
+    </div>
+    <div class="pf-line">
+      <span class="pf-label">特质显示</span>
+      <div class="seg seg-sm" role="group" aria-label="特质显示方式">
+        <button type="button" data-display="compact" class="selected" aria-pressed="true">点击查看</button>
+        <button type="button" data-display="inline" aria-pressed="false">直接显示</button>
+      </div>
+      <select data-trait-version aria-label="显示的特质版本" disabled>
+        <option value="normal">普通特质</option>
+        <option value="elite">精锐特质</option>
+        <option value="both" selected>普通 + 精锐</option>
+      </select>
+      <label class="pf-check"><input type="checkbox" data-color-traits checked>按类型着色</label>
+      <button id="resetPC" class="pf-reset" type="button">重置筛选</button>
+    </div>
+  </div>
+</section>
 
 <div id="activeFilters" class="active-filters" hidden></div>
 
@@ -117,13 +160,13 @@
       </div>
       <div class="f-row">
         <label for="traitVersion">显示内容</label>
-        <select id="traitVersion" disabled>
+        <select id="traitVersion" data-trait-version disabled>
           <option value="normal">普通特质</option>
           <option value="elite">精锐特质</option>
           <option value="both" selected>普通 + 精锐</option>
         </select>
       </div>
-      <label class="switch"><input id="colorTraits" type="checkbox" checked>按特质类型着色</label>
+      <label class="switch"><input id="colorTraits" data-color-traits type="checkbox" checked>按特质类型着色</label>
       <div id="traitLegend" class="legend">
         <span class="legend-item kind-stack">叠层干员</span>
         <span class="legend-item kind-combat">作战能力</span>
@@ -156,6 +199,6 @@
   <div class="sheet-body" id="effectBody"></div>
 </dialog>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

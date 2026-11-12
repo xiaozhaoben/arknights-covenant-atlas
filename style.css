@@ -382,3 +382,34 @@ body.show-kinds .op-trait h4{color:var(--kind)}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* ===== 桌面端内联筛选 ===== */
+.pc-filters{display:none}
+@media(min-width:760px){
+  .filter-btn{display:none}
+  .pc-filters{display:block;max-width:1280px;margin:10px auto 0;padding:0 14px}
+  .pf-card{border:1px solid var(--line);background:var(--bg-soft);border-radius:14px;padding:2px 14px 4px}
+  .pf-line{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+  .pf-line:first-child{border-top:0}
+  .pf-label{flex:none;width:64px;font-size:10.5px;letter-spacing:.12em;color:var(--muted)}
+  .pf-bonds{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
+  .pf-bonds .bond-cell{min-height:38px;padding:4px 8px;grid-template-columns:22px minmax(0,1fr);column-gap:7px;border-radius:9px}
+  .pf-bonds .bond-cell img{width:22px;height:22px}
+  .pf-bonds .bc-name{font-size:11.5px}
+  .pf-bonds .bc-count{font-size:9px}
+  .pf-group{display:flex;flex-wrap:wrap;gap:4px}
+  .pf-group button{min-height:34px;padding:0 11px;border:1px solid var(--line);background:var(--panel);border-radius:8px;font-size:11.5px;color:var(--muted)}
+  .pf-group button.selected{border-color:var(--accent);background:var(--tint);color:var(--accent);font-weight:600}
+  .pf-check{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted)}
+  .pf-check input{width:16px;height:16px;accent-color:var(--accent)}
+  .pf-reset{margin-left:auto;min-height:34px;padding:0 12px;border-radius:8px;border:1px solid #2f6c53;background:var(--tint);color:var(--accent);font-size:11.5px;font-weight:600}
+  .pc-filters .seg{padding:3px;border-radius:9px}
+  .pc-filters .seg button{min-height:32px;padding:0 10px;font-size:11.5px}
+  .pc-filters select{min-height:34px;padding:0 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:11.5px}
+  .pc-filters select:disabled{opacity:.5}
+}
+@media(min-width:760px) and (max-width:1099px){
+  .pf-bonds .bond-cell{min-height:34px;padding:3px 7px}
+  .pf-bonds .bc-count{display:none}
+  .pf-bonds .bc-name{font-size:11px}
+}

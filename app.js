@@ -198,10 +198,8 @@ function syncControls() {
   $$('[data-group]').forEach(b => { const on = b.dataset.group === groupMode; b.classList.toggle('selected', on); b.setAttribute('aria-pressed', on); });
   $$('[data-display]').forEach(b => { const on = b.dataset.display === displayMode; b.classList.toggle('selected', on); b.setAttribute('aria-pressed', on); });
   $$('[data-bond]').forEach(b => { const on = b.dataset.bond === bond; b.classList.toggle('selected', on); b.setAttribute('aria-pressed', on); });
-  const v = $('#traitVersion');
-  if (v) { v.value = traitVersion; v.disabled = displayMode !== 'inline'; }
-  const c = $('#colorTraits');
-  if (c) c.checked = colorTraits;
+  $$('[data-trait-version]').forEach(s => { s.value = traitVersion; s.disabled = displayMode !== 'inline'; });
+  $$('[data-color-traits]').forEach(c => { c.checked = colorTraits; });
   const legend = $('#traitLegend');
   if (legend) legend.hidden = !colorTraits;
   document.body.classList.toggle('show-kinds', colorTraits);
@@ -229,12 +227,13 @@ function reset() {
 }
 
 function buildBondGrid() {
-  $('#bondGrid').innerHTML = data.bonds.map(b => {
+  const html = data.bonds.map(b => {
     const n = data.operators.filter(o => o.bonds.includes(b.name)).length;
     return `<button type="button" class="bond-cell" data-bond="${esc(b.name)}" aria-pressed="false">
       <img src="${b.icon}" alt=""><span class="bc-text"><span class="bc-name">${esc(b.name)}</span><span class="bc-count">${n} 名</span></span>
     </button>`;
   }).join('');
+  ['#bondGrid', '#pcBondGrid'].forEach(sel => { const el = $(sel); if (el) el.innerHTML = html; });
 }
 
 document.addEventListener('click', e => {
@@ -287,9 +286,14 @@ $('#search').addEventListener('input', e => {
   $('#search')._t = setTimeout(render, 110);
 });
 $('#reset').addEventListener('click', reset);
+const resetPC = $('#resetPC'); if (resetPC) resetPC.addEventListener('click', reset);
 $('#openFilter').addEventListener('click', () => openSheet('filterSheet'));
-$('#traitVersion').addEventListener('change', e => { traitVersion = e.target.value; saveDisplay(); });
-$('#colorTraits').addEventListener('change', e => { colorTraits = e.target.checked; saveDisplay(); });
+document.addEventListener('change', e => {
+  const v = e.target.closest('[data-trait-version]');
+  if (v) { traitVersion = v.value; saveDisplay(); return; }
+  const c = e.target.closest('[data-color-traits]');
+  if (c) { colorTraits = c.checked; saveDisplay(); }
+});
 
 $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
 
