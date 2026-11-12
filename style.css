@@ -17,3 +17,66 @@
 
 /* All navigation and covenant filters live above the roster. */
 main{margin-left:0}.content{max-width:1600px}.bond-picker{border-bottom:1px solid var(--line);padding:10px 15px}.bond-picker-head,.bond-picker-row{display:flex;align-items:flex-start;gap:14px;padding:5px 0}.bond-picker-head{align-items:center}.bond-picker .filter-label{min-width:60px;padding-top:5px}.bond-picker-head .filter-label{padding-top:0}.bond-picker-hint{font-size:10px;color:var(--muted);margin-left:auto}.bond-choices{display:flex;flex-wrap:wrap;gap:6px;flex:1}.bond-choice{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;min-height:31px;font-size:12px;background:#333;color:#f7f7f7;border:1px solid #666;box-shadow:0 2px 3px #0002}.bond-choice img{height:18px;width:18px;object-fit:contain}.bond-choice span{font-size:10px;opacity:.7}.bond-choice:hover{border-color:#00a5da}.bond-choice.selected{background:#009fd0;color:white;border-color:#008dbb}.bond-picker-row[hidden]{display:none}@media(max-width:720px){main{margin-left:0}.bond-picker{padding:8px 10px}.bond-picker-head,.bond-picker-row{gap:8px;flex-wrap:wrap}.bond-picker .filter-label{min-width:48px;font-size:11px}.bond-picker-row .filter-label{width:100%;padding-top:2px}.bond-choice{font-size:11px;padding:5px 7px;gap:4px}.bond-picker-hint{font-size:9px;width:100%;margin-left:0}.bond-choices{gap:5px}}
+@media(max-width:720px){
+html{-webkit-text-size-adjust:100%}
+.content{padding:16px 13px 26px}
+.heading{margin-bottom:14px;padding-bottom:12px}
+h1{font-size:23px}
+.stats{margin-bottom:14px}
+.stats b{font-size:24px}
+.controls{border-left:0;border-right:0}
+.panel-title{padding:7px 12px}
+.panel-title small{margin-left:8px}
+.control-row,.filter-row,.trait-filter-row,.display-row{padding:10px 12px;gap:9px}
+.tabs button,.tiers button,.display-modes button,.trait-filters button{min-height:38px;padding:7px 11px;font-size:12px}
+.search{width:100%;height:42px}
+.search input{font-size:14px}
+.bond-picker{padding:9px 12px 6px}
+.bond-picker-head{padding:0 0 8px}
+.bond-picker-hint{font-size:10px}
+.bond-picker-row{display:block;padding:0 0 9px}
+.bond-picker-row .filter-label{display:block;width:auto;padding:0 0 6px;font-size:11px}
+.bond-choices{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding:1px 0 3px;scrollbar-width:none}
+.bond-choices::-webkit-scrollbar{display:none;height:0}
+.bond-choice{flex:0 0 auto;min-height:38px;padding:6px 11px;font-size:12px;scroll-snap-align:start}
+.bond-choice img{height:20px;width:20px}
+.bond-choice span{font-size:10px}
+#reset{margin-left:auto;margin-top:2px}
+.trait-version-label{font-size:11px}
+#traitVersion{min-height:38px;font-size:13px;padding:6px}
+.color-toggle{font-size:12px}
+.trait-legend{gap:7px 14px;font-size:11px;padding:2px 12px 10px}
+.results-head{padding:15px 0 8px}
+.group{margin-bottom:14px;scroll-margin-top:48px}
+.group-head{gap:8px;padding:8px 10px}
+.group h2{font-size:17px}
+.activation{font-size:10px}
+.group-total{font-size:10px}
+.group-total b{font-size:18px}
+.effect{padding:8px 11px}
+.effect summary{font-size:12px}
+.effect p{font-size:12px;line-height:1.8}
+.roster{padding:9px;gap:7px}
+.operator{min-height:150px}
+.operator-main{padding:10px 4px 9px}
+.operator strong{font-size:12.5px}
+.mini-bonds span{font-size:10px;padding:0 5px}
+.trait-kind{font-size:10px}
+.inline-trait p{font-size:13px;line-height:1.85}
+dialog{width:100%;max-width:100%;max-height:88vh;position:fixed;inset:auto 0 0 0;margin:0;border-left:0;border-right:0;border-bottom:0;border-top-width:4px;padding:22px 16px 20px;box-shadow:0 -10px 40px #0004}
+.detail-top{gap:13px;margin-bottom:16px}
+.detail-top img{height:66px;width:66px}
+.detail-top h2{font-size:20px}
+.bond-effect-title{margin:0 16px 14px 0;gap:10px}
+.bond-effect-title h2{font-size:19px}
+.bond-effect-text{font-size:14px;line-height:1.95}
+.trait{font-size:13px;padding:12px}
+#closeDialog,#closeBondEffect{right:6px;top:2px;width:42px;height:42px;font-size:26px;line-height:1}
+footer{font-size:11px;line-height:1.9}
+}
+@media(max-width:360px){
+.roster{gap:6px;padding:8px}
+.operator strong{font-size:12px}
+.mini-bonds span{font-size:9px}
+.bond-choice{min-height:36px;padding:5px 9px;font-size:11px}
+}
